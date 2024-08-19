@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import NavBar from '../components/NavBar.astro'
+import GalleryContainer from '../components/GalleryContainer.astro';
+
+const images = [
+    {src: "../../src/photos/ropas/ropa_1.jpeg", alt:"ropa"},
+    {src: "../../src/photos/ropas/ropa_2.jpeg", alt:"ropa"},
+    {src: "../../src/photos/ropas/ropa_3.jpeg", alt:"ropa"},
+    {src: "../../src/photos/ropas/ropa_4.jpeg", alt:"ropa"},
+    {src: "../../src/photos/ropas/ropa_5.jpeg", alt:"ropa"},
+    {src: "../../src/photos/ropas/ropa_6.jpeg", alt:"ropa"},
+]
+---
+
+<Base title="Catálogo - Ropa">
+	<main>
+		<!--Barra de navegación -->
+		<NavBar estado_calzado='' estado_inicio='' estado_ropa='activate' estado_accesorio=''/>
+        <!--Galeria -->
+        <GalleryContainer list_images={images}/>
+	</main>
+</Base>
+
+<style>
+	
+</style>

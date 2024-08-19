@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import NavBar from '../components/NavBar.astro'
+---
+
+<Base title="Catálogo -Inicio">
+	<main>
+		<!--Barra de navegación -->
+		<NavBar estado_calzado='' estado_inicio='activate' estado_ropa='' estado_accesorio=''/>
+	</main>
+	<div class="imagen_responsive">
+		<img class="imagen_inicio" src="https://aluguefacilitoy.com.br/wp-content/uploads/2022/07/astronauta-foguete-842x1024.png" alt="">
+	</div>
+</Base>
+
+<style>
+	@media(max-width: 756px){
+		.imagen_inicio{
+			width: 500px;
+			height: 500px;
+			margin-top: 90px;
+		}
+		.imagen_responsive{
+			justify-content: center;
+			display: flex;
+		}
+	}
+</style>

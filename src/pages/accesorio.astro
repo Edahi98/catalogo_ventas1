@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import NavBar from '../components/NavBar.astro'
+import GalleryContainer from '../components/GalleryContainer.astro';
+
+const images = [
+    {src: "../../src/photos/accesorios/accesorio_1.jpeg", alt:"accesorio"},
+    {src: "../../src/photos/accesorios/accesorio_2.jpeg", alt:"accesorio"},
+    {src: "../../src/photos/accesorios/accesorio_3.jpeg", alt:"accesorio"},
+    {src: "../../src/photos/accesorios/accesorio_4.jpeg", alt:"accesorio"},
+    {src: "../../src/photos/accesorios/accesorio_5.jpeg", alt:"accesorio"},
+    
+]
+---
+
+<Base title="Catálogo - Accesorios">
+	<main>
+		<!--Barra de navegación -->
+		<NavBar estado_calzado='' estado_inicio='' estado_ropa='' estado_accesorio='activate'/>
+        <GalleryContainer list_images={images}/>
+	</main>
+</Base>
+
+<style>
+	
+</style>

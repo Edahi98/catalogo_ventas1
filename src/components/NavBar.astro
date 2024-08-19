@@ -1,0 +1,157 @@
+---
+interface Props{
+    estado_inicio: string
+    estado_ropa: string
+    estado_calzado: string
+    estado_accesorio: string
+}
+
+const { estado_calzado, estado_inicio, estado_ropa, estado_accesorio } = Astro.props;
+
+
+---
+<header>
+    <img src="https://static.vecteezy.com/system/resources/previews/024/912/155/original/cute-cartoon-astronaut-with-rocket-free-png.png" alt="logo" width="80px" height="80px">
+    <script src="../../src/components/navbar.js"></script>
+    <h1>CATÁLOGO</h1>
+    <div class="bars">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+        <ul>
+            <a href="/" class={estado_inicio}>
+                <li>Inicio</li>
+            </a>
+            <a href="/ropa" class={estado_ropa}>
+                <li>Ropa</li>
+            </a>
+            <a href="/calzado" class={estado_calzado}>
+                <li>Calzado</li>
+            </a>
+            <a href="/accesorio" class={estado_accesorio}>
+                <li>Accesorios</li>
+            </a>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    header{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5px;
+    }
+
+    .bars{
+        display: none;
+        margin-right: 4px;
+    }
+
+    .nav-bar ul{
+        display: flex;
+    }
+    .nav-bar a{
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 10px 25px;
+        border-radius: 15px;
+        transform: 0.2s;
+        margin: 0 5px;
+    }
+
+    .nav-bar a:hover{
+        color: #1b2631;
+        background-color: white;
+    }
+
+    .nav-bar a.activate{
+        color: #1b2631;
+        background-color: white;
+    }
+
+    h1{
+        background: #1E85CF;
+        background: linear-gradient(to right, #1E85CF 0%, #CF1512 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: -32%;
+        font-family: "Jersey 10";
+        letter-spacing: 20px;
+    }
+
+    @media(max-width: 756px){
+        header {
+        padding: 0;
+    }
+
+    h1{
+        margin-left: -8%;
+    }
+    .bars {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bars .line {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0px;
+    }
+
+    .nav-bar{
+        height: 0px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: #212f3c;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active{
+        height: 450px;
+    }
+
+    .nav-bar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul{
+        opacity: 1;
+
+    }
+
+    .nav-bar.active a{
+        margin-bottom: 20px;
+
+    }
+
+    .logo{
+        display: flex;
+    }
+}
+</style>

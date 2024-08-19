@@ -1,0 +1,45 @@
+---
+interface Props{
+    list_images: Item[]
+}
+
+const {list_images} = Astro.props;
+
+interface Item{
+    src: string
+    alt: string
+}
+---
+
+<!--Renderiza las imagenes -->
+<div class="gallery--container">
+    {
+        list_images.map((image: Item)=>(
+            <img src={image.src} alt={image.alt}>
+        ))
+    }
+  
+</div>
+
+
+<style>
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .gallery--container{
+        width: 90%;
+        max-width: 1100px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        grid-auto-rows: 430px;
+    }
+
+    .gallery--container img{
+        height: 100%;
+        border-radius: 20px;
+    }
+</style>

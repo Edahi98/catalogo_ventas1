@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import NavBar from '../components/NavBar.astro'
+---
+
+<Base title="Catálogo - Calzado">
+	<main>
+		<!--Barra de navegación -->
+		<NavBar estado_calzado='activate' estado_inicio='' estado_ropa='' estado_accesorio=''/>
+		<div class="stock">
+			<h1>Actualmente no contamos con calzado</h1>
+		</div>
+	</main>
+</Base>
+
+<style>
+	.stock{
+		margin-top: 50px;
+		margin-left: 12px;
+	}
+</style>
